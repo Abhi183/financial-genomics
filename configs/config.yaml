@@ -1,0 +1,56 @@
+data:
+  ticker: "SPY"
+  start_date: "2015-01-01"
+  end_date: "2024-12-31"
+  train_end_date: "2022-12-31"
+  test_start_date: "2023-01-01"
+  data_dir: "data/raw/"
+  processed_dir: "data/processed/"
+
+discretization:
+  volatility_window: 20
+  alphabet: ["A", "C", "G", "T"]
+
+kmer:
+  k: 3
+  top_n: 10
+  min_motif_count: 5
+  n_permutations: 1000
+
+lstm:
+  embedding_dim: 8
+  hidden_size: 128
+  num_layers: 2
+  dropout: 0.3
+  sequence_length: 50
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 50
+  device: "cpu"
+  model_save_path: "models/genomic_lstm.pt"
+
+walk_forward:
+  initial_train_size: 500
+  retrain_every: 21  # monthly
+  test_window: 252
+
+backtest:
+  initial_capital: 100000
+  commission_bps: 1
+  slippage_bps: 1
+  spike_threshold: 0.70
+  crash_threshold: 0.70
+  position_sizing: "kelly"
+
+baselines:
+  arima_order: [1, 1, 1]
+  garch_p: 1
+  garch_q: 1
+  sax_n_symbols: 4
+  sax_word_size: 10
+  matrix_profile_window: 20
+
+output:
+  results_dir: "results/"
+  figures_dir: "paper/figures/"
+  reports_dir: "results/reports/"
