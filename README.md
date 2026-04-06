@@ -261,24 +261,6 @@ $$f^* = \frac{p \cdot b - (1 - p)}{b} = p - \frac{1-p}{b}$$
 
 The fractional Kelly $f = \alpha f^*$ with $\alpha = 0.5$ is used in practice to reduce variance.
 
----
-
-## Citation
-
-If you use this code or methodology in academic work, please cite:
-
-```bibtex
-@article{financial_genomics_2024,
-  title   = {Financial Genomics: Applying Sequence Analysis to Market Regime Detection},
-  author  = {Author, A. and Author, B.},
-  journal = {Journal of Computational Finance},
-  year    = {2024},
-  volume  = {28},
-  number  = {3},
-  pages   = {1--32},
-  doi     = {10.21314/JCF.2024.001},
-}
-```
 
 ---
 
